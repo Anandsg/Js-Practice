@@ -35,8 +35,8 @@ const restaurant = {
 
 const arr = [1, 2, 3];
 
-const b = arr[1];
 const a = arr[0];
+const b = arr[1];
 const c = arr[2];
 
 const [x, y, z] = arr;
@@ -60,4 +60,46 @@ console.log(first, second);
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse)
 
+
+// OBJECT DESTRUCTURING
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// SPREAD OPERTAOR (...)
+
+const arr1 = [3, 4, 5];
+const newArr1 = [1, 2, ...arr1];
+console.log(newArr1);
+
+const arr2 = ['Vada pav', ...restaurant.mainMenu];
+console.log(arr2);
+
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// OPTIONAL CHAINING
+
+console.log(restaurant.openingHours.tue?.open);
+
+// OPTIONAL CHAINING WITH FOR OF LOOP
+
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat'];
+for (const day of days) {
+  console.log(day);
+}
+
+// SETS
+
+const orderSet = new Set(['Pizza', 'KFC', 'KFC', 'Burger', 'Idli', 'Vada']);
+console.log(orderSet);
+
+console.log(new Set('Jonas'));
+console.log(orderSet.size);
+console.log(orderSet.has('KFC')); // true
+console.log(orderSet.has('Puri')); // false
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread'); // observe it add only once
+console.log(orderSet);
 
