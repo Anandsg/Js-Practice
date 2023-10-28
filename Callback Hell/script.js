@@ -58,6 +58,8 @@ const getCountryAndNeighbour = function (country) {
 };
 
 getCountryAndNeighbour('india');
+// getCountryAndNeighbour('usa');
+
 
 
 
