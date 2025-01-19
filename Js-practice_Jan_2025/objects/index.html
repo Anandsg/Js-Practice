@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obj</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "shoes",
+        price: 4000,
+      };
+      console.log(product);
+      console.log(product.name); // dot notation
+      console.log((product.name = "nike shoes"));
+      console.log(product);
+      product.newProperty = "puma shoes"; // adding product
+      console.log(product);
+      delete product.newProperty; // deleting the product
+      console.log(product);
+    </script>
+  </body>
+</html>
