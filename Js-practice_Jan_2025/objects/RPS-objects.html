@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Functions</title>
+    <title>Objects</title>
   </head>
   <body>
     <p>Rock Paper Scissor</p>
@@ -28,8 +28,19 @@
     >
       Scissor
     </button>
+    <button
+      onclick="
+        score.wins=0;
+        score.losses=0;
+        score.ties=0;
+        diplayScore()
+    "
+    >
+      Reset score
+    </button>
+    <div id="score-message"></div>
     <script>
-      const totals = {
+      const score = {
         wins: 0,
         losses: 0,
         ties: 0,
@@ -64,14 +75,15 @@
           }
         }
         if (result === "You win 🎉") {
-          totals.wins = totals.wins + 1;
+          score.wins = score.wins + 1;
         } else if (result === "You lose 😕 play again!") {
-          totals.losses = totals.losses + 1;
+          score.losses = score.losses + 1;
         } else if ("Tie 🥲") {
-          totals.ties = totals.ties + 1;
+          score.ties = score.ties + 1;
         }
         alert(
-          `You picked ${playerMove} and computer picked ${computerMove}, ${result}\n${totals.wins}`
+          `You picked ${playerMove} and computer picked ${computerMove}, ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
         );
       }
       function pickComputerMove() {
@@ -85,6 +97,9 @@
           computerMove = "scissor";
         }
         return computerMove;
+      }
+      function diplayScore() {
+        document.getElementById("score-message").innerText = "Score reset!";
       }
     </script>
   </body>
