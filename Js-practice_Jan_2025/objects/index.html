@@ -19,6 +19,55 @@
       console.log(product);
       delete product.newProperty; // deleting the product
       console.log(product);
+      console.log(product["name"]); // bracket notation
+
+      // nested obj
+
+      const product2 = {
+        name: "shirt",
+        price: 200,
+        brand: {
+          name: "adidas",
+          color: "black",
+        },
+      };
+
+      console.log(product2.brand.name);
+
+      // creating function inside the obj (this is called Method)
+
+      const product3 = {
+        name: "puma",
+        "delivery-time": "2 Days",
+        fun: function printMsg() {
+          console.log("Function inside the obj!!");
+        },
+      };
+
+      product3.fun();
+
+      console.log(typeof console); // object
+      console.log(typeof console.log); // function
+
+      // JavaScript object to JSON (string) and vis versa
+
+      const product4 = {
+        title: "tee",
+        brand: "fuaark",
+        details: {
+          color: "blue",
+          size: "XL",
+          length: 28,
+        },
+      };
+
+      // When sending data to a web server, the data has to be a string.
+      console.log(JSON.stringify(product4));
+
+      const jsonString = JSON.stringify(product4);
+
+      // string to object
+      console.log(JSON.parse(jsonString));
     </script>
   </body>
 </html>
