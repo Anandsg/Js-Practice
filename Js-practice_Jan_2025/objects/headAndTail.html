@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head or Tail</title>
+  </head>
+  <body>
+    <button onclick="game.playerGuess('Head')">Head</button>
+    <button onclick="game.playerGuess('Tail')">Tail</button>
+    <script>
+      // Object to encapsulate game logic
+      const game = {
+        computerGuess: function () {
+          return Math.random() < 0.5 ? "Head" : "Tail"; // Randomly choose Head or Tail
+        },
+        playerGuess: function (playerChoice) {
+          const computerChoice = this.computerGuess();
+          if (computerChoice === playerChoice) {
+            alert(`Computer guessed ${computerChoice}. It's a tie!`);
+          } else {
+            alert(`Computer guessed ${computerChoice}. You win!`);
+          }
+        },
+      };
+    </script>
+  </body>
+</html>

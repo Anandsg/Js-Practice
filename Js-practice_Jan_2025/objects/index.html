@@ -68,6 +68,39 @@
 
       // string to object
       console.log(JSON.parse(jsonString));
+
+      // Imp
+      const object1 = {
+        message: "Good job",
+      };
+
+      // object2 pointing to the same reference of object1
+      const object2 = object1;
+
+      const object3 = {
+        message: "Good job",
+      };
+
+      /* although we have same object it will result into false as both 
+       objects pointing to the different reference in the computer memory */
+      console.log(object1 === object3); // false
+
+      /* true as both objects pointing to the same references in the memory */
+      console.log(object1 === object2); // true
+
+      // Destructuring the obj
+
+      const object4 = {
+        message: "Hello",
+        price: 655,
+      };
+
+      // const message = object4.message;
+
+      //Destructuring
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
     </script>
   </body>
 </html>
