@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>click</button>
+    <button class="js-btn">second button</button>
+    <script>
+      console.log(document.title);
+
+      document.title = "DOM";
+
+      console.log(document.body.innerHTML);
+      // document.body.innerHTML = "hello"; // it will replace everything with hello in the body
+
+      // this will get the any html element and put them inside Js
+
+      console.log(document.body.querySelector("button").innerHTML);
+      document.body.querySelector("button").innerHTML = "click me";
+
+      // if we have 2 buttons we can access second btn with class attriubte
+      const secondbutton = document.body.querySelector(".js-btn").innerHTML;
+      console.log(secondbutton);
+      document.body.querySelector(".js-btn").innerHTML =
+        "second button  changed";
+    </script>
+  </body>
+</html>
