@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM project</title>
+    <style>
+      .subscribe-button {
+        border: none;
+        background-color: rgb(172, 38, 38);
+        color: white;
+        font-weight: bold;
+        padding: 8px 13px 8px 13px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+    </style>
   </head>
   <body>
     <p>YouTube Subscribe Button</p>
@@ -11,17 +27,24 @@
       onclick="
       subscribe()
     "
-      class="subscribe-btn"
+      class="js-subscribe-btn subscribe-button"
     >
       Subscribe
     </button>
     <script>
       function subscribe() {
-        const subscribeElement = document.body.querySelector(".subscribe-btn");
+        const subscribeElement =
+          document.body.querySelector(".js-subscribe-btn");
         if (subscribeElement.innerHTML === "Subscribe") {
           subscribeElement.innerHTML = "Subscribed";
+
+          // add extra class to change the bg clr
+          subscribeElement.classList.add("is-subscribed");
         } else {
           subscribeElement.innerHTML = "Subscribe";
+
+          // remove extra class to change the bg clr
+          subscribeElement.classList.remove("is-subscribed");
         }
       }
     </script>

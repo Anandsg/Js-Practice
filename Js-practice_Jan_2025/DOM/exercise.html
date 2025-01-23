@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    document.querySelector('.js-message').innerHTML = `You choose: Head`
+    "
+    >
+      Heads
+    </button>
+    <button
+      onclick="
+    document.querySelector('.js-message').innerHTML = `You choose: Tail`
+    "
+    >
+      Tails
+    </button>
+
+    <!-- display name -->
+    <input type="text" class="input-field" />
+    <button
+      onclick="
+      const inputeElement = document.querySelector('.input-field');
+      document.querySelector('.js-message').innerHTML = `Your Name :${inputeElement.value}`
+    "
+    >
+      submit
+    </button>
+    <p class="js-message"></p>
+
+    <input
+      type="text"
+      class="js-input"
+      onkeyup="
+      const inputElement = document.querySelector('.js-input');
+      document.querySelector('.onkey-message').innerHTML = `${inputElement.value}`
+      
+    "
+    />
+    <p class="onkey-message"></p>
+    <script></script>
+  </body>
+</html>
