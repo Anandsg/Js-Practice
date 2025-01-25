@@ -31,13 +31,13 @@ function addTodo() {
   //   console.log(dueDate);
 
   if (name.trim() === "") {
-    document.querySelector(".js-name-message").innerHTML = `Please add name!`;
-    
+    document.querySelector(
+      ".js-name-message"
+    ).innerHTML = `Please add todo name!`;
   } else if (dueDate.trim() === "") {
     document.querySelector(
       ".js-due-date-message"
     ).innerHTML = `Please select date!`;
-
   } else {
     document.querySelector(".js-name-message").innerHTML = "";
     document.querySelector(".js-due-date-message").innerHTML = "";
