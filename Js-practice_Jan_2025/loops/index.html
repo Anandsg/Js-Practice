@@ -60,6 +60,24 @@
         return -1;
       }
       console.log(findIndex(["hello", "hi", "js", "anand"], "anand"));
+
+      // remove / skkip first 2 eggs
+
+      function removeEgg(foods) {
+        let result = [];
+        let eggCount = 0; // 1 2
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === "egg" && eggCount < 2) {
+            eggCount++;
+            continue;
+          } else {
+            result.push(foods[i]); // apple // grapes
+          }
+        }
+        console.log(result);
+      }
+
+      removeEgg(["apple", "egg", "egg", "grapes", "egg"]);
     </script>
   </body>
 </html>
