@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 10; i++) {
+        if (i === 3) {
+          continue; // skip a condition and continue
+        }
+        console.log(i);
+        if (i === 8) {
+          break; // break after a certain condition
+        }
+      }
+
+      // check if number divisible by 3
+
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          // console.log("divisible number is", i);
+          continue;
+        }
+        console.log("numbers which is not divisble by 3 :", i);
+      }
+
+      // loop in function
+
+      function doubleArr(nums) {
+        //   let nums = [1,2,3];
+        let numsDoubled = [];
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (num === 0) {
+            // break;
+            return numsDoubled;
+          }
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled;
+      }
+
+      console.log(doubleArr([1, 2, 3]));
+      console.log(doubleArr([2, 4, 0, 6]));
+
+      // find the word
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            // Return the index if the word is found
+            return i;
+          }
+        }
+
+        // If the word is not found, return -1
+        return -1;
+      }
+      console.log(findIndex(["hello", "hi", "js", "anand"], "anand"));
+    </script>
+  </body>
+</html>
