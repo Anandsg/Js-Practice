@@ -78,6 +78,27 @@
       }
 
       removeEgg(["apple", "egg", "egg", "grapes", "egg"]);
+
+      // reverse() - remove last 2 egg from an arr
+
+      function removeEgg(foods) {
+        let result = [];
+        const reverseFood = foods.reverse();
+        let eggCount = 0; // 1,2
+        for (let i = 0; i < reverseFood.length; i++) {
+          if (reverseFood[i] === "egg" && eggCount < 2) {
+            eggCount++;
+            continue;
+          } else {
+            result.push(reverseFood[i]); // apple grapes
+          }
+        }
+        result.reverse();
+        console.log(result);
+      }
+      removeEgg(["apple", "egg", "egg", "grapes", "egg", "egg"]);
+
+      // output should be - ["apple", "egg", "egg", "grapes"]
     </script>
   </body>
 </html>

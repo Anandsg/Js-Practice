@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // passing a function into function (callback)
+      function run(param) {
+        param();
+      }
+      run(function () {
+        console.log("hello");
+      });
+
+      // settimeout - asychronous code
+
+      setTimeout(function greeting() {
+        console.log("hey!");
+      }, 3000); // prints hey after 3 seconds
+
+      console.log("hello1"); // prints immediately
+
+      // setinterval - it will keep running the function in the future
+
+      setInterval(function greeting1() {
+        console.log("interval");
+      }, 3000); // prints interval every 3 seconds
+
+      console.log("interval2"); // prints immediately and then starts setinterval function
+    </script>
+  </body>
+</html>
