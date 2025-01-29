@@ -3,14 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>App</title>
   </head>
   <body>
     <script>
       ["middleware", "redux", "RTK"].forEach(function (value, index) {
-        console.log(index);
+        // console.log(index);
         console.log(value);
       });
+
+      // Exercise
+
+      const add = function () {
+        console.log(2 + 2);
+      };
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(function () {
+        console.log("12b");
+      });
+
+      runTwice(add);
+
+      // switch btns
+
+      function switchBtn() {
+        document.querySelector(".switch-btn").innerHTML = "Loading...";
+        setTimeout(function switchBtn() {
+          document.querySelector(".switch-btn").innerHTML = "Finished";
+        }, 1000);
+      }
+
+      // add to cart
+
+      let timeOutId;
+
+      function addTocart() {
+        document.querySelector(".cart-message").innerHTML = "Item Added";
+
+        clearTimeout(timeOutId);
+        timeOutId = setTimeout(function addTocart() {
+          document.querySelector(".cart-message").innerHTML = "";
+        }, 2000);
+      }
+
+      // change title setinterval();
+
+      setInterval(function () {
+        if (document.title === "App") {
+          document.title = "(2) Messages";
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
     </script>
+
+    <button
+      onclick="
+    switchBtn();
+    "
+      class="switch-btn"
+    >
+      Start
+    </button>
+
+    <button
+      onclick="
+    addTocart();
+    "
+    >
+      Add to Cart
+    </button>
+    <p class="cart-message"></p>
   </body>
 </html>
