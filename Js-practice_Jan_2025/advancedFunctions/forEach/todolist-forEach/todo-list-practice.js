@@ -13,13 +13,27 @@ function renderTodoList() {
           <button onclick="
           todoList.splice(${index}, 1)
           renderTodoList();"
-          class="delete-btn">Delete</button>
+          class="delete-btn js-delete-button">Delete</button>
       `;
     todoListHtml += html;
   });
   document.querySelector(".js-todo-list").innerHTML = todoListHtml;
   //   console.log(todoListHtml);
+
+  document
+    .querySelectorAll(".js-delete-button")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      });
+    });
 }
+
+document.querySelector(".js-add-button").addEventListener("click", () => {
+  addTodo();
+});
+
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const name = inputElement.value;
