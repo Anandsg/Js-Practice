@@ -53,6 +53,15 @@ document.querySelector(".js-scissor-button").addEventListener("click", () => {
   playGame("scissor");
 });
 
+document.querySelector(".js-reset-button").addEventListener("click", () => {
+  diplayScore();
+  updateScoreElement();
+});
+
+document.querySelector(".js-auto-play-button").addEventListener("click", () => {
+  autoPlay();
+});
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = "";
@@ -134,3 +143,17 @@ function diplayScore() {
   // clearing the local storage
   localStorage.removeItem("score");
 }
+
+// handle key press(r, p, s)
+
+document.body.addEventListener("keydown", (event) => {
+  // console.log(event.key);
+
+  if (event.key === "r") {
+    playGame("rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissor");
+  }
+});
