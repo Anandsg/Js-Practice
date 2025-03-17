@@ -58,14 +58,42 @@ function set() {
 }
 set();
 
+// if interviewer asks to use var keyword only in the above code then we can use closure.
 function time() {
   for (var i = 1; i <= 5; i++) {
     function close(x) {
       setTimeout(function () {
-        console.log(x);
+        console.log(x); // it will print 1 to 5.
       }, x * 1000);
     }
     close(i);
   }
 }
 time();
+
+// passing another variable as arguement to the inner function.
+function outer(b) {
+  var a = 10;
+  function inner() {
+    console.log(a, b);
+  }
+  return inner;
+}
+
+const output = outer("hello");
+output();
+
+// creating outest function and returning outer function.
+function outest() {
+  var a = 10;
+  function outer(b) {
+    var c = 20;
+    function inner() {
+      console.log(a, b, c);
+    }
+    return inner;
+  }
+  return outer;
+}
+const output1 = outest()("hello");
+output1();
