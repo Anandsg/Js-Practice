@@ -40,3 +40,32 @@ function outer() {
 var another = outer();
 // console.log(another);
 another();
+
+var i = 1;
+setTimeout(() => {
+  console.log(i);
+}, 1000);
+
+// setTimeout is a method that calls a function or evaluates an expression after a specified number of milliseconds.
+
+function set() {
+  // if we use let i will print 1 to 5.
+  for (var i = 1; i <= 5; i++) {
+    setTimeout(() => {
+      console.log(i); // using var i will print 6 five times.
+    });
+  }
+}
+set();
+
+function time() {
+  for (var i = 1; i <= 5; i++) {
+    function close(x) {
+      setTimeout(function () {
+        console.log(x);
+      }, x * 1000);
+    }
+    close(i);
+  }
+}
+time();
