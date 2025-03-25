@@ -97,3 +97,17 @@ function outest() {
 }
 const output1 = outest()("hello");
 output1();
+
+// Callbacks
+setTimeout(() => {
+  console.log("timer");
+}, 3000);
+
+function xx(yy) {
+  console.log("xx");
+  yy();
+}
+
+xx(function yy() {
+  console.log("yy");
+});
