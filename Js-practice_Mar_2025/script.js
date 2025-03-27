@@ -111,3 +111,17 @@ function xx(yy) {
 xx(function yy() {
   console.log("yy");
 });
+
+// map
+
+const users = [
+  { firstName: "anand", lastName: "gadagin", age: 26 },
+  { firstName: "deepika", lastName: "padukone", age: 30 },
+  { firstName: "arun", lastName: "sharma", age: 40 },
+];
+
+const output2 = users.map((user) => {
+  return user.firstName + " " + user.lastName;
+});
+
+console.log(output2);
