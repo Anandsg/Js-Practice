@@ -112,7 +112,7 @@ xx(function yy() {
   console.log("yy");
 });
 
-// map
+// map, filter, reduce
 
 const users = [
   { firstName: "anand", lastName: "gadagin", age: 26 },
@@ -120,8 +120,61 @@ const users = [
   { firstName: "arun", lastName: "sharma", age: 40 },
 ];
 
+// map
 const output2 = users.map((user) => {
   return user.firstName + " " + user.lastName;
 });
 
 console.log(output2);
+
+// filter
+const filteredUsers = users.filter((user) => user.age < 30);
+
+filteredUsers.map((user) => {
+  console.log(user.firstName);
+});
+
+// call back
+
+const cart = ["shoes", "shirts", "pants"];
+
+function createOrder(callback) {
+  console.log("Creating order...");
+
+  setTimeout(() => {
+    console.log("Order created successfully.");
+
+    function proceedToPayment(callback) {
+      console.log("Proceeding to payment...");
+
+      setTimeout(() => {
+        console.log("Payment processed successfully.");
+
+        function orderSummary(callback) {
+          console.log("Generating order summary...");
+
+          setTimeout(() => {
+            console.log("Order summary generated.");
+
+            function updateWallet() {
+              console.log("Updating wallet...");
+
+              setTimeout(() => {
+                console.log("Wallet updated successfully.");
+              }, 500);
+            }
+
+            updateWallet(); // Calling updateWallet inside orderSummary
+          }, 1000);
+        }
+
+        orderSummary(); // Calling orderSummary inside proceedToPayment
+      }, 1500);
+    }
+
+    proceedToPayment(); // Calling proceedToPayment inside createOrder
+  }, 1000);
+}
+
+// Initiating the process
+createOrder();
