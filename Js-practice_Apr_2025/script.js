@@ -11,3 +11,15 @@ pr.then((res) => {
 });
 
 console.log("Promise created");
+
+// async
+
+async function getData() {
+  return "data fetched";
+}
+
+const dataPromise = getData();
+
+dataPromise.then((res) => {
+  console.log(res);
+});
