@@ -12,14 +12,24 @@ pr.then((res) => {
 
 console.log("Promise created");
 
-// async
+// async always returns a promise
 
 async function getData() {
-  return "data fetched";
+  return "data fetched!";
 }
 
-const dataPromise = getData();
-
-dataPromise.then((res) => {
+getData().then((res) => {
   console.log(res);
 });
+
+const p = new Promise((resolve, reject) => {
+  resolve("Data fetched value!");
+});
+
+// await can only be used inside async functions
+async function handlePromise() {
+  const result = await p;
+  console.log(result);
+}
+
+handlePromise();
