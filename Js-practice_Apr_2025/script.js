@@ -33,3 +33,19 @@ async function handlePromise() {
 }
 
 handlePromise();
+
+// real world example
+
+const API_URL = "https://api.git34sub.com/users/Anandsg";
+
+async function getUserData() {
+  try {
+    const data = await fetch(API_URL);
+    const json = await data.json();
+    console.log(json);
+  } catch (error) {
+    console.log("API invalid");
+  }
+}
+
+getUserData();
